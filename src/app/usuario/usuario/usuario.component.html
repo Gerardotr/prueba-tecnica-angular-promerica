@@ -1,0 +1,45 @@
+
+<div fxLayout="row" fxLayoutAlign="center center" class="general-container">
+    <div class="row-height" fxLayoutAlign="space-evenly stretch" class="tabsheader">
+
+    </div>
+    <mat-tab-group fxFlex="80%" #tab dynamicHeight>
+        <mat-tab label="Todos los anuncios">
+            <div fxLayout="column" fxLayoutGap="0px" fxLayoutAlign="start center" class="bgsoftColor">
+                <div fxFlex fxLayout="column" fxLayoutGap="0px" fxLayoutAlign="center stretch" fxFlexFill
+                    style="padding-top: 5rem; padding-bottom: 5rem">
+                    <div fxLayout="row" fxLayoutGap="0px" fxLayoutAlign="space-between stretch" class="section-3"
+                        ngClass.lt-lg="content">
+                        <div fxFlexFill class="">
+                            <mat-card class="mat-fixed-card mat-elevation-z3 general-card">
+                                <mat-card-header>
+                                    <div mat-card-avatar>
+                                        <mat-icon aria-hidden="false" aria-label="Done" class="primaryColor">
+                                            notifications
+                                        </mat-icon>
+                                    </div>
+                                    <mat-card-title> Ver Cliente </mat-card-title>
+                                    <mat-card-subtitle> </mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-content>
+
+                                    <mat-list>
+                                        <mat-list-item> {{usuario.id}} </mat-list-item>
+                                        <mat-divider>
+                                        </mat-divider>
+                                        <mat-list-item> {{usuario.nombre}} </mat-list-item>
+                                        <mat-divider>
+                                        </mat-divider>
+                                        <mat-list-item> {{usuario.apellido}} </mat-list-item>
+                                       </mat-list>
+                                   
+                                </mat-card-content>
+                                <mat-card-actions align="end"> </mat-card-actions>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

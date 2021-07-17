@@ -1,0 +1,125 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="general-container">
+    <div class="row-height" fxLayoutAlign="space-evenly stretch" class="tabsheader">
+
+    </div>
+    <mat-tab-group fxFlex="60%" #tab dynamicHeight [selectedIndex]="selectedIndex">
+        <mat-tab label="Registrar Producto">
+            <div fxLayout="column" fxLayoutGap="0px" fxLayoutAlign="start center" class="bgsoftColor">
+                <div fxFlex fxLayout="column" fxLayoutGap="0px" fxLayoutAlign="center stretch" fxFlexFill
+                    style="padding-top: 5rem; padding-bottom: 5rem;">
+                    <div fxLayout="row" fxLayoutGap="0px" fxLayoutAlign="space-between stretch" class="section-3"
+                        ngClass.lt-lg="content">
+                        <div fxFlexFill class="">
+                            <mat-card class="mat-fixed-card mat-elevation-z3 general-card">
+                                <mat-card-header>
+                                    <div mat-card-avatar>
+                                        <mat-icon aria-hidden="false" aria-label="Done" class="primaryColor">
+                                            <span class="material-icons-outlined">
+                                                category
+                                                </span></mat-icon>
+                                    </div>
+                                    <mat-card-title>
+                                        Registrar Producto
+                                    </mat-card-title>
+                                    <mat-card-subtitle> </mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-content>
+                                    <a mat-button color="primary" class="btnPrimary" routerLink="/producto/listado">
+                                        Ir al listado
+                                    </a>
+                                    <!--              Here will go the table-->
+                                    <form [formGroup]="registerForm" (ngSubmit)="register()" class="example-container"
+                                        autocomplete="off">
+                                        <div fxLayout="row" fxLayoutGap="1%" fxLayoutAlign="start center">
+                                            <div fxFlex="100%">
+
+                                            </div>
+                                        </div>
+                                        <mat-divider></mat-divider>
+                                        <br />
+                                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px"
+                                            fxLayoutGap.lt-sm="0px" fxLayoutAlign="start center"
+                                            fxLayoutAlign="start stretch">
+                                            <div fxFlex="calc(50% - 10px)" fxFlex.lt-sm="auto">
+                                                <mat-form-field appearance="outline" style="width:
+                    100%">
+                                                    <mat-label>Id</mat-label>
+                                                    <input formControlName="id" matInput type="number" name="id"
+                                                        placeholder="Id" required="required" mask="00000000-0"
+                                                        maxlength="10" />
+                                                </mat-form-field>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px"
+                                        fxLayoutGap.lt-sm="0px" fxLayoutAlign="start center"
+                                        fxLayoutAlign="start stretch">
+
+                                        
+                                        <div fxFlex="calc(50% - 10px)" fxFlex.lt-sm="auto">
+                                            <mat-form-field appearance="outline" style="width:
+                    100%">
+                                                <mat-label>Descripción</mat-label>
+                                                <input formControlName="descripcion" matInput type="text" name="title"
+                                                    placeholder="Precio" required="required"
+                                                    mask="0000-000000-000-0" maxlength="17" />
+                                            </mat-form-field>
+                                        </div>
+
+
+
+                                        <div fxFlex="calc(50% - 10px)" fxFlex.lt-sm="auto">
+                                            <mat-form-field appearance="outline" style="width:
+                    100%">
+                                                <mat-label>Precio</mat-label>
+                                                <input formControlName="precio" matInput type="number" name="title"
+                                                    placeholder="Precio" required="required"
+                                                    mask="0000-000000-000-0" maxlength="17" />
+                                            </mat-form-field>
+                                        </div>
+                                  
+                                    </div>
+
+
+
+                                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px"
+                                            fxLayoutGap.lt-sm="0px" fxLayoutAlign="start center"
+                                            fxLayoutAlign="start stretch">
+                                            <div fxFlex="calc(50% - 10px)" fxFlex.lt-sm="auto">
+                                                <mat-form-field appearance="outline" style="width:
+                        100%">
+                                                    <mat-label>Nombre</mat-label>
+                                                    <input formControlName="nombre" matInput type="text" name="title"
+                                                        placeholder="nombre" required="required" mask="00000000-0"
+                                                        maxlength="10" />
+                                                </mat-form-field>
+                                            </div>
+
+
+
+                                        </div>
+
+                                        <mat-card-actions align="end">
+                                            <button mat-raised-button cdkFocusInitial>
+                                                Cancelar
+                                            </button>
+
+                                            <button [disabled]="registerForm.invalid" type="submit" mat-raised-button
+                                                color="primary">
+                                                Registrar
+                                            </button>
+                                        </mat-card-actions>
+                                    </form>
+                                </mat-card-content>
+
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+
+    </mat-tab-group>
+</div>

@@ -1,0 +1,119 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="general-container">
+    <div class="row-height" fxLayoutAlign="space-evenly stretch" class="tabsheader">
+
+    </div>
+    <mat-tab-group fxFlex="80%" #tab dynamicHeight>
+        <mat-tab label="Todos las ordenes">
+            <div fxLayout="column" fxLayoutGap="0px" fxLayoutAlign="start center" class="bgsoftColor">
+                <div fxFlex fxLayout="column" fxLayoutGap="0px" fxLayoutAlign="center stretch" fxFlexFill
+                    style="padding-top: 5rem; padding-bottom: 5rem">
+                    <div fxLayout="row" fxLayoutGap="0px" fxLayoutAlign="space-between stretch" class="section-3"
+                        ngClass.lt-lg="content">
+                        <div fxFlexFill class="">
+                            <mat-card class="mat-fixed-card mat-elevation-z3 general-card">
+                                <mat-card-header>
+                                    <div mat-card-avatar>
+                                        <mat-icon aria-hidden="false" aria-label="Done" class="primaryColor">
+                                            <span class="material-icons-outlined">
+                                                inventory_2
+                                                </span>
+                                        </mat-icon>
+                                    </div>
+                                    <mat-card-title> Administrar Ordenes </mat-card-title>
+                                    <mat-card-subtitle> </mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-content>
+                                    <a mat-button color="primary" class="btnPrimary" routerLink="/orden/registrar">
+                                        Crear Orden
+                                    </a>
+
+                                    <div class="mat-elevation-z0 table-responsive mt-1">
+                                        <table mat-table matSort [dataSource]="dataSource" class="action-table">
+                                            <ng-container matColumnDef="idProducto">
+                                                <th mat-header-cell fxFlex="auto" fxLayout="row"
+                                                    fxLayoutAlign="start center" *matHeaderCellDef mat-sort-header>
+                                                    idProducto
+                                                </th>
+                                                <td mat-cell fxFlex="auto" fxLayout="row" fxLayoutAlign="start center"
+                                                    *matCellDef="let row" data-label="idProducto">
+                                                    {{ row.idProducto}}
+                                                </td>
+                                            </ng-container>
+
+                                            <ng-container matColumnDef="idCliente">
+                                                <th mat-header-cell fxFlex="auto" fxLayout="row"
+                                                    fxLayoutAlign="start center" *matHeaderCellDef mat-sort-header>
+                                                    idCliente
+                                                </th>
+                                                <td mat-cell fxFlex="auto" fxLayout="row" fxLayoutAlign="start center"
+                                                    *matCellDef="let row" data-label="idCliente">
+                                                    {{ row.idCliente }}
+                                                </td>
+                                            </ng-container>
+                                            <ng-container matColumnDef="idOrden">
+                                                <th mat-header-cell fxFlex="auto" fxLayout="row"
+                                                    fxLayoutAlign="start center" *matHeaderCellDef mat-sort-header>
+                                                    idOrden
+                                                </th>
+                                                <td mat-cell fxFlex="auto" fxLayout="row" fxLayoutAlign="start center"
+                                                    *matCellDef="let row" data-label="idOrden">
+                                                    {{ row.id }}
+                                                </td>
+                                            </ng-container>
+
+                                            <ng-container matColumnDef="cantidad">
+                                                <th mat-header-cell fxFlex="auto" fxLayout="row"
+                                                    fxLayoutAlign="start center" *matHeaderCellDef mat-sort-header>
+                                                    cantidad
+                                                </th>
+                                                <td mat-cell fxFlex="auto" fxLayout="row" fxLayoutAlign="start center"
+                                                    *matCellDef="let row" data-label="cantidad">
+                                                    {{ row.cantidad }}
+                                                </td>
+                                            </ng-container>
+
+                                            <ng-container matColumnDef="fecha">
+                                                <th mat-header-cell fxFlex="auto" fxLayout="row"
+                                                    fxLayoutAlign="start center" *matHeaderCellDef mat-sort-header>
+                                                    Fecha
+                                                </th>
+                                                <td mat-cell fxFlex="auto" fxLayout="row" fxLayoutAlign="start center"
+                                                    *matCellDef="let row" data-label="fecha">
+                                                    {{ row.fecha }}
+                                                </td>
+                                            </ng-container>
+
+
+                                            <ng-container matColumnDef="options">
+                                                <th mat-header-cell fxFlex="auto" fxLayout="row"
+                                                    fxLayoutAlign="end center" *matHeaderCellDef mat-sort-header>
+                                                    Acciones</th>
+                                                <td mat-cell fxFlex="auto" fxLayout="row" fxLayoutAlign="end center"
+                                                    *matCellDef="let row">
+                                                    <button mat-button color="primary" [matMenuTriggerFor]="options">
+                                                        Opciones
+                                                    </button>
+                                                    <mat-menu #options="matMenu">
+                                                        <a [routerLink]="['/producto/ver', row.id ]" mat-menu-item>Ver</a>
+                                                    </mat-menu>
+
+
+                                                </td>
+                                            </ng-container>
+
+                                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                                        </table>
+                                        <mat-paginator #paginator [pageSizeOptions]="[25, 100, 200]"
+                                            showFirstLastButtons></mat-paginator>
+                                    </div>
+                                </mat-card-content>
+                                <mat-card-actions align="end"> </mat-card-actions>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>
